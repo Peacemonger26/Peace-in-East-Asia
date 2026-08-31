@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voices for Peace & Disarmament in Asia</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Tailwind Configuration for Custom Theme -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            earth: {
+              50: '#fbf9f5',
+              100: '#f5f0e6',
+              200: '#e6dabf',
+              700: '#4a3f35',
+              800: '#362e27',
+              900: '#231e1a',
+            },
+            olive: {
+              600: '#4a5d4e',
+              700: '#38483b',
+              800: '#29352b',
+            }
+          },
+          fontFamily: {
+            serif: ['Georgia', 'Cambria', 'serif'],
+            sans: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Smooth Scrollbar & Selection */
+    html { scroll-behavior: smooth; }
+    ::selection { background-color: #d1e2d3; color: #1c241d; }
+    .dark ::selection { background-color: #38483b; color: #e6dabf; }
+  </style>
+</head>
+
+<body class="bg-earth-50 text-earth-900 dark:bg-earth-900 dark:text-earth-50 font-sans min-h-full transition-colors duration-200 flex flex-col justify-between">
+
+  <!-- Top Progress Bar Indicator -->
+  <div id="progress-bar" class="fixed top-0 left-0 h-1 bg-olive-600 transition-all duration-150 z-50" style="width: 0%"></div>
+
+  <!-- Main Navigation / Header -->
+  <header class="border-b border-earth-200 dark:border-earth-700 bg-earth-50/80 dark:bg-earth-900/80 backdrop-blur sticky top-0 z-40">
+    <div class="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
+      <div class="flex items-center space-x-2">
+        <span class="text-xl font-bold font-serif tracking-tight text-olive-600 dark:text-olive-600">Peace & Disarmament Asia</span>
+      </div>
+      
+      <div class="flex items-center space-x-3">
+        <!-- Theme Toggle Button -->
+        <button id="theme-toggle" aria-label="Toggle theme" class="p-2 rounded-lg border border-earth-200 dark:border-earth-700 hover:bg-earth-100 dark:hover:bg-earth-800 transition-colors">
+          <svg id="theme-toggle-dark-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 100 2h1z"></path>
+          </svg>
+          <svg id="theme-toggle-light-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Article Container -->
+  <main class="max-w-3xl mx-auto px-4 py-10 flex-grow">
+    
+    <!-- Article Header -->
+    <article class="space-y-6">
+      <div class="space-y-3">
+        <div class="flex items-center space-x-3 text-sm text-earth-700 dark:text-earth-200">
+          <span class="bg-olive-600/10 text-olive-600 dark:text-olive-600 px-2.5 py-0.5 rounded-full font-medium">Civil Society Regional Digest</span>
+          <span>•</span>
+          <span>3 min read</span>
+          <span>•</span>
+          <time datetime="2026-04">April 2026</time>
+        </div>
+        
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-serif font-bold tracking-tight text-earth-900 dark:text-earth-50 leading-tight">
+          Voices Across Asia Demand Peace & Phased Disarmament Over Deterrence
+        </h1>
+        
+        <p class="text-lg sm:text-xl text-earth-700 dark:text-earth-200 font-serif leading-relaxed italic border-l-4 border-olive-600 pl-4 py-1">
+          As geopolitical tensions run high, civil society groups and peace advocates across Asia are speaking out against growing military spending and nuclear reliance.
+        </p>
+      </div>
+
+      <!-- Action Toolbar (Republishing Tools) -->
+      <div class="my-6 p-4 bg-earth-100 dark:bg-earth-800 rounded-xl flex flex-wrap items-center justify-between gap-3 border border-earth-200 dark:border-earth-700">
+        <span class="text-sm font-medium text-earth-700 dark:text-earth-200">Share or Reproduce this Article:</span>
+        <div class="flex items-center space-x-2">
+          <button id="copy-text-btn" class="text-xs px-3 py-2 bg-earth-50 dark:bg-earth-900 border border-earth-200 dark:border-earth-700 rounded-lg hover:bg-earth-200 dark:hover:bg-earth-700 transition-colors flex items-center space-x-1">
+            <span>Copy Text</span>
+          </button>
+          <button id="copy-link-btn" class="text-xs px-3 py-2 bg-olive-600 text-white rounded-lg hover:bg-olive-700 transition-colors flex items-center space-x-1">
+            <span>Share Link</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Article Content Body -->
+      <div id="article-body" class="prose prose-earth dark:prose-invert max-w-none text-base sm:text-lg leading-relaxed space-y-6 font-serif">
+        
+        <p>
+          Across East Asia and the broader region, a powerful counter-narrative to escalating military budgets is taking shape. Rather than viewing national security strictly through the lens of weapon accumulation and nuclear umbrellas, civil society organizations, grassroots movements, and peace researchers are offering alternative visions centered on human security, diplomatic engagement, and phased disarmament.
+        </p>
+
+        <p>
+          From South Korea to Japan, grassroots groups are actively challenging the assumption that peace can only be guaranteed through ever-increasing military deterrence. Instead, these organizations advocate for shifting national resources toward pressing global challenges—such as climate resilience, social safety nets, and peace education—arguing that true security stems from regional cooperation rather than mutual threat.
+        </p>
+
+        <!-- Blockquote Callout -->
+        <blockquote class="my-8 p-6 bg-earth-100/60 dark:bg-earth-800/60 rounded-xl border-l-4 border-olive-600 not-italic font-sans">
+          <p class="text-base sm:text-lg font-medium text-earth-800 dark:text-earth-100 mb-2">
+            "True security cannot be achieved by expanding arms races or relying on nuclear deterrence. True security relies on building trust, common security frameworks, and reallocating military funds toward human needs."
+          </p>
+          <cite class="text-xs uppercase tracking-wider text-earth-700 dark:text-earth-200 font-bold font-sans block">— Regional Civil Society Declaration</cite>
+        </blockquote>
+
+        <p>
+          Recent initiatives highlight key focus areas for regional peace advocates:
+        </p>
+
+        <ul class="list-disc pl-6 space-y-2 font-sans text-base">
+          <li><strong>Challenging the Deterrence Doctrine:</strong> Demonstrating how over-reliance on military build-ups often leads to security dilemmas rather than long-term stability.</li>
+          <li><strong>Promoting Human Security:</strong> Reallocating defensive budgets to combat climate risks, economic inequality, and public health needs.</li>
+          <li><strong>Advocating for Nuclear Abolition:</strong> Pushing regional governments to participate actively in international treaties like the Treaty on the Prohibition of Nuclear Weapons (TPNW).</li>
+          <li><strong>Building Common Security:</strong> Fostering bilateral and multilateral dialogue channels that center joint solutions over competitive posturing.</li>
+        </ul>
+
+        <h2 class="text-2xl font-serif font-bold text-earth-900 dark:text-earth-50 mt-10 mb-4">
+          Featured Regional Initiatives & Organizations
+        </h2>
+      </div>
+
+      <!-- Interactive Organization Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-8 font-sans">
+        
+        <!-- Card 1 -->
+        <div class="p-5 bg-earth-100 dark:bg-earth-800 rounded-xl border border-earth-200 dark:border-earth-700 hover:border-olive-600 transition-colors">
+          <h3 class="font-bold text-lg text-earth-900 dark:text-earth-50 mb-1">People's Solidarity for Participatory Democracy (PSPD)</h3>
+          <p class="text-xs text-olive-600 dark:text-olive-600 mb-3 font-medium">Seoul, South Korea</p>
+          <p class="text-sm text-earth-700 dark:text-earth-200 leading-normal">
+            Advocates for reducing military expenditure in South Korea, shifting resources toward climate resilience, and establishing peaceful diplomatic dialogue in East Asia.
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="p-5 bg-earth-100 dark:bg-earth-800 rounded-xl border border-earth-200 dark:border-earth-700 hover:border-olive-600 transition-colors">
+          <h3 class="font-bold text-lg text-earth-900 dark:text-earth-50 mb-1">Peace Boat & JCANW</h3>
+          <p class="text-xs text-olive-600 dark:text-olive-600 mb-3 font-medium">Tokyo, Japan</p>
+          <p class="text-sm text-earth-700 dark:text-earth-200 leading-normal">
+            Organizes grassroots campaigns urging Japan to step away from extended nuclear deterrence and join the Treaty on the Prohibition of Nuclear Weapons.
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="p-5 bg-earth-100 dark:bg-earth-800 rounded-xl border border-earth-200 dark:border-earth-700 hover:border-olive-600 transition-colors">
+          <h3 class="font-bold text-lg text-earth-900 dark:text-earth-50 mb-1">International Peace Bureau (IPB Asia)</h3>
+          <p class="text-xs text-olive-600 dark:text-olive-600 mb-3 font-medium">Hiroshima / Regional Coalition</p>
+          <p class="text-sm text-earth-700 dark:text-earth-200 leading-normal">
+            Issues joint international declarations challenging nuclear weapons doctrine and promoting civilian-led security initiatives across the South China Sea and Northeast Asia.
+          </p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="p-5 bg-earth-100 dark:bg-earth-800 rounded-xl border border-earth-200 dark:border-earth-700 hover:border-olive-600 transition-colors">
+          <h3 class="font-bold text-lg text-earth-900 dark:text-earth-50 mb-1">PEACEMOMO</h3>
+          <p class="text-xs text-olive-600 dark:text-olive-600 mb-3 font-medium">Seoul, South Korea</p>
+          <p class="text-sm text-earth-700 dark:text-earth-200 leading-normal">
+            Focuses on peace education and "Common Security" principles, working to shift cultural mindsets away from militarism and toward mutual regional security.
+          </p>
+        </div>
+
+      </div>
+
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-earth-200 dark:border-earth-700 bg-earth-100/50 dark:bg-earth-900/50 py-8 font-sans">
+    <div class="max-w-3xl mx-auto px-4 text-center space-y-3">
+      <p class="text-xs text-earth-700 dark:text-earth-200">
+        Published under Open Access / Creative Commons guidelines for non-commercial reproduction and public peace education.
+      </p>
+      <p class="text-xs text-earth-700 dark:text-earth-200">
+        Peace & Disarmament Asia • Open Resource Platform
+      </p>
+    </div>
+  </footer>
+
+  <!-- Notification Toast Container -->
+  <div id="toast" class="fixed bottom-5 right-5 bg-earth-800 text-earth-50 px-4 py-3 rounded-lg shadow-lg text-sm hidden z-50 transition-all transform translate-y-2">
+    <span id="toast-message">Copied to clipboard!</span>
+  </div>
+
+  <!-- JavaScript for Theme Toggle, Scroll Progress, and Copy Tools -->
+  <script>
+    // 1. Reading Progress Bar
+    window.onscroll = function() {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      document.getElementById("progress-bar").style.width = scrolled + "%";
+    };
+
+    // 2. Dark/Light Theme Switching
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+    const themeToggleBtn = document.getElementById('theme-toggle');
+
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+      themeToggleLightIcon.classList.remove('hidden');
+    } else {
+      document.documentElement.classList.remove('dark');
+      themeToggleDarkIcon.classList.remove('hidden');
+    }
+
+    themeToggleBtn.addEventListener('click', function() {
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+
+      if (localStorage.getItem('color-theme')) {
+        if (localStorage.getItem('color-theme') === 'light') {
+          document.documentElement.classList.add('dark');
+          localStorage.setItem('color-theme', 'dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+          localStorage.setItem('color-theme', 'light');
+        }
+      } else {
+        if (document.documentElement.classList.contains('dark')) {
+          document.documentElement.classList.remove('dark');
+          localStorage.setItem('color-theme', 'light');
+        } else {
+          document.documentElement.classList.add('dark');
+          localStorage.setItem('color-theme', 'dark');
+        }
+      }
+    });
+
+    // 3. Toast Notifications & Copy Tools
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toast-message');
+      toastMsg.innerText = message;
+      toast.classList.remove('hidden', 'translate-y-2');
+      toast.classList.add('translate-y-0');
+      
+      setTimeout(() => {
+        toast.classList.add('hidden', 'translate-y-2');
+      }, 3000);
+    }
+
+    document.getElementById('copy-text-btn').addEventListener('click', function() {
+      const articleText = document.getElementById('article-body').innerText;
+      navigator.clipboard.writeText(articleText).then(() => {
+        showToast('Article text copied to clipboard!');
+      });
+    });
+
+    document.getElementById('copy-link-btn').addEventListener('click', function() {
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        showToast('Page link copied to clipboard!');
+      });
+    });
+  </script>
+
+</body>
+</html>
